@@ -9,7 +9,7 @@ import { handleImage, handleApiCall } from './controllers/image.js';
 import knex from 'knex';
 
 // dotenv.config({ path: './.env' });
-const PORT = process.env.DB_PORT || 3000;
+// const PORT = process.env.PORT || 3000;
 
 const db = knex({
     client: process.env.DB_CLIENT,
@@ -53,6 +53,6 @@ app.post('/imageurl', (req,res) => {
     handleApiCall(req,res);
 });
 
-app.listen(PORT ,() => {
-    console.log(`app is running on port ${PORT}`);
+app.listen(3000 ,() => {
+    console.log(`app is running on port 3000`);
 });

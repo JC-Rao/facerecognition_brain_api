@@ -5,15 +5,17 @@ import { handleRegister } from './controllers/register.js';
 import { handleSignin} from './controllers/signin.js';
 import { handleProfileGet } from './controllers/profile.js';
 import { handleImage, handleApiCall } from './controllers/image.js'; 
-import dotenv from 'dotenv';
+// import dotenv from 'dotenv';
 import knex from 'knex';
 
-dotenv.config({ path: './.env' });
+// dotenv.config({ path: './.env' });
 const PORT = process.env.PORT || 3000;
 
 const db = knex({
     client: process.env.DB_CLIENT,
     connection: {
+      connectionString: process.env.DB_URL,
+      ssl : { rejectUnauthorized: false},
       host: process.env.DB_HOST,
       port: process.env.DB_PORT,
       user: process.env.DB_USER,

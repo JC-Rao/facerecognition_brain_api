@@ -9,7 +9,7 @@ import { handleImage, handleApiCall } from './controllers/image.js';
 import knex from 'knex';
 
 // dotenv.config({ path: './.env' });
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.DB_PORT || 3000;
 
 const db = knex({
     client: process.env.DB_CLIENT,
